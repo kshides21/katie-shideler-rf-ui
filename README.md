@@ -33,4 +33,15 @@ npm run build
 
 The compiled static site is located in the `build` folder. Serve that folder with a static web server to preview the production build.
 
-To preview the production build with VS Code Live Server, open this repository as the VS Code workspace and click **Go Live**. The workspace Live Server setting serves the `build` folder as the site root so the compiled assets load from the correct paths.
+The build uses relative asset paths, so you can open `build/index.html` directly in a browser after building. You can also preview it with VS Code Live Server: open this repository as the VS Code workspace and click **Go Live**. The workspace setting serves the `build` folder as the site root.
+
+## CodeSandbox
+
+Import this repository into a CodeSandbox Devbox (container), then run:
+
+```bash
+npm ci
+npm start
+```
+
+Open the preview for port 3000. A Devbox runs the app with its installed dependencies instead of relying on the browser-only Sass transpiler worker.
