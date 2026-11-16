@@ -13,12 +13,12 @@ To run the project locally:
 
 1. Install dependencies:
    ```bash
-   npm install
+   npm ci
    ```
 
 2. Start the development server:
    ```bash
-   npm run dev
+   npm start
    ```
 
 3. Open the local URL provided in your terminal.
@@ -31,4 +31,6 @@ To generate the production build:
 npm run build
 ```
 
-The compiled application is located in the `build` folder. Open `build/index.html` in a browser to view the completed application.
+The compiled static site is located in the `build` folder. Serve that folder with a static web server to preview the production build.
+
+To preview the production build with VS Code Live Server, open this repository as the VS Code workspace and click **Go Live**. The workspace Live Server setting serves the `build` folder as the site root so the compiled assets load from the correct paths.
