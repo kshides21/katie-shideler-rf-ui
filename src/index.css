@@ -360,19 +360,264 @@ a {
   font-weight: 500;
 }
 
+.attendees-page__steps {
+  margin: 0 0 18px;
+}
+
 .attendees-page__step {
-  margin: 0 0 8px;
+  margin: 0 0 7px;
   color: #55535d;
   font-size: 11px;
 }
 
-.attendees-page__placeholder {
-  min-height: 96px;
-  padding: 18px;
+.attendees-page__settings {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  min-height: 90px;
+  padding: 18px 22px;
   border: 1px solid #ded9e9;
   border-radius: 4px;
-  color: #66636d;
+}
+
+.attendees-page__setting strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #292832;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.attendees-page__setting p {
+  margin: 0;
+  color: #49465a;
   font-size: 12px;
+  line-height: 1.35;
+}
+
+.attendees-page__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px 16px;
+}
+
+.attendees-page__card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 90px;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 18px 20px;
+  border: 1px solid #ded9e9;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.attendees-page__card h3 {
+  margin: 2px 0 5px;
+  color: #292832;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.attendees-page__card p {
+  margin: 0;
+  color: #49465a;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.attendees-page__workflow-icon {
+  flex: 0 0 16px;
+  margin-top: 0;
+  color: #6100df;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 17px;
+}
+
+.attendees-page__portal-icon {
+  position: relative;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 12px;
+  margin-top: 2px;
+  border: 2px solid #6100df;
+  border-radius: 1px;
+}
+
+.attendees-page__portal-icon::after {
+  position: absolute;
+  bottom: -5px;
+  left: 3px;
+  width: 7px;
+  height: 2px;
+  background: #6100df;
+  content: '';
+}
+
+.attendees-page__add-card {
+  display: flex;
+  min-height: 90px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #ded9e9;
+  border-radius: 4px;
+  background: #fff;
+  color: #292832;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.attendees-page__add-card:hover {
+  border-color: #6100df;
+  background: #fbf8ff;
+}
+
+.attendees-page__add-icon {
+  display: grid;
+  width: 16px;
+  height: 16px;
+  place-items: center;
+  border: 1.5px solid #6100df;
+  border-radius: 50%;
+  color: #6100df;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.attendees-page__add-form {
+  display: flex;
+  min-width: 0;
+  min-height: 170px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid #ded9e9;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.attendees-page__add-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #49465a;
+  font-size: 10px;
+}
+
+.attendees-page__add-form input {
+  width: 100%;
+  min-width: 0;
+  padding: 6px 7px;
+  border: 1px solid #ded9e9;
+  border-radius: 3px;
+  color: #292832;
+  font: inherit;
+}
+
+.attendees-page__add-form input:focus {
+  border-color: #6100df;
+  outline: 1px solid #6100df;
+}
+
+.attendees-page__form-error {
+  margin: 0;
+  color: #b00020;
+  font-size: 10px;
+}
+
+.attendees-page__form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.attendees-page__add-submit,
+.attendees-page__cancel {
+  padding: 7px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.attendees-page__add-submit {
+  border: 0;
+  background: #6100df;
+  color: #fff;
+}
+
+.attendees-page__add-submit:hover {
+  background: #4b00c6;
+}
+
+.attendees-page__cancel {
+  border: 1px solid #ded9e9;
+  background: #fff;
+  color: #49465a;
+}
+
+.attendees-page__cancel:hover {
+  background: #f7f5fa;
+}
+
+.attendees-page__remove {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #f2eafd;
+  color: #4b00c6;
+  cursor: pointer;
+  font-size: 17px;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.attendees-page__card:hover .attendees-page__remove,
+.attendees-page__remove:focus-visible {
+  opacity: 1;
+}
+
+.attendees-page__grid--portal .attendees-page__card {
+  min-height: 90px;
+}
+
+@media (max-width: 900px) {
+  .attendees-page__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .attendees-page__settings,
+  .attendees-page__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .attendees-page__settings {
+    gap: 14px;
+  }
+
+  .attendees-page__card p,
+  .attendees-page__setting p {
+    font-size: 11px;
+  }
+
+  .attendees-page__remove {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 700px) {
